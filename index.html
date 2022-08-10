@@ -1,27 +1,25 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>GeoAR.js demo</title>
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script>
-      THREEx.ArToolkitContext.baseURL =
-        "https://raw.githack.com/jeromeetienne/ar.js/master/three.js/";
-    </script>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>
   </head>
-
-  <body style="margin: 0; overflow: hidden">
-    <a-scene
-      gltf-model="./assets/magnemite/scene.gltf"
-      rotation="0 180 0"
-      scale="0.15 0.15 0.15"
-      gps-entity-place="longitude: 139.560708; latitude: 35.657777;"
-      animation-mixer
-    >
-      <a-camera gps-camera rotation-reader></a-camera>
+  <body>
+    <a-scene physics>
+      <a-box
+        position="-1 4 -3"
+        rotation="0 45 0"
+        color="#4CC3D9"
+        dynamic-body
+      ></a-box>
+      <a-plane
+        position="0 0 -4"
+        rotation="-90 0 0"
+        width="4"
+        height="4"
+        color="#7BC8A4"
+        static-body
+      ></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
 </html>
