@@ -16,6 +16,12 @@
       embedded
       arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
     >
+      <a-assets>
+        <a-asset-item
+          id="coil"
+          src="./assets/magnemite/scene.gltf"
+        ></a-asset-item>
+      </a-assets>
       <a-box
         position="-1 4 -3"
         rotation="0 45 0"
@@ -41,13 +47,13 @@
         gps-entity-place="longitude: 139.560701; latitude: 35.657797;"
         animation-mixer
       /> -->
-      <!-- <a-entity
-        gltf-model="./assets/magnemite/scene.gltf"
-        rotation="0 180 0"
+      <a-entity
+        look-at="[gps-camera]"
+        gltf-model="#coil"
         scale="0.08 0.08 0.08"
+        rotation="0 180 0"
         gps-entity-place="latitude: 40.777474; longitude: -73.9462704;"
-        animation-mixer
-      /> -->
+      />
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
   </body>
